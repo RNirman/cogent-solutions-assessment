@@ -35,9 +35,9 @@ export default function Navbar() {
 
         {/* Center Navigation */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium" style={{ color: isScrolled ? 'var(--text)' : '#ffffff' }}>
-          <a href="#overview" className="hover:text-[var(--accent)] ui-transition">Overview</a>
-          <a href="#speakers" className="hover:text-[var(--accent)] ui-transition">Speakers</a>
-          <a href="#agenda" className="hover:text-[var(--accent)] ui-transition">Agenda</a>
+          <a href="#overview" className="hover:text-[var(--accent)] ui-transition">Event Overview</a>
+          <a href="#speakers" className="hover:text-[var(--accent)] ui-transition">Speaker Lineup</a>
+          <a href="#agenda" className="hover:text-[var(--accent)] ui-transition">Session Agenda</a>
         </nav>
 
         {/* Right Actions & Logo */}

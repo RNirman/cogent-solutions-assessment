@@ -18,8 +18,8 @@ export default function Speakers() {
       <div className="absolute inset-0 bg-(--accent) opacity-[0.03] transform -skew-y-3 origin-top-left"></div>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--accent)' }}>Our Speakers</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Meet the leaders shaping the future of supply chain</h2>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--accent)' }}>Featured Speakers</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Meet the Leaders Shaping the Future of Supply Chain</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-8">

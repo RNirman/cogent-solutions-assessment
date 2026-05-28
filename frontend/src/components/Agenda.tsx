@@ -40,8 +40,8 @@ export default function Agenda({ agendaItems }: AgendaProps) {
       </div>
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--accent)' }}>Schedule</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Agenda</h2>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--accent)' }}>Event Schedule</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Session Agenda</h2>
         </div>
 
         {/* Filters */}

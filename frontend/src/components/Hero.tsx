@@ -152,7 +152,7 @@ export default function Hero() {
 
           <div className="flex items-center gap-4 pt-4">
             <a href="#register" className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-bold text-white shadow-xl hover:shadow-[0_0_20px_var(--accent-glow)] hover:scale-[1.02] ui-transition bg-gradient-to-r from-[var(--accent)] to-[var(--accent-600)] border border-[var(--accent)]/50">
-              Secure Your Spot
+              Request Your Invitation
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -184,7 +184,7 @@ export default function Hero() {
               </div>
               <div className="pt-6 border-t border-white/10">
                 <p className="text-sm font-medium text-gray-300 leading-relaxed">
-                  Join industry leaders from <span className="text-white">Al-Futtaim Logistics</span>, <span className="text-white">Weatherford</span>, and <span className="text-white">Dubai Cable Company</span>.
+                  Join executive leaders from <span className="text-white">Al-Futtaim Logistics</span>, <span className="text-white">Weatherford</span>, and <span className="text-white">Dubai Cable Company</span>.
                 </p>
               </div>
            </div>

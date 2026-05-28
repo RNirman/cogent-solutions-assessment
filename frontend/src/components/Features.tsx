@@ -52,8 +52,8 @@ export default function Features() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--accent)' }}>Top 3 Reasons to Attend</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Why this event matters for Gulf supply chain leaders</h2>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--accent)' }}>Three Strategic Outcomes</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Why This Summit Matters for Gulf Supply Chain Leaders</h2>
         </div>
 
         <div className="space-y-24">

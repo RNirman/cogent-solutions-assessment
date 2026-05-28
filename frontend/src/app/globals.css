@@ -3,50 +3,86 @@
 /* Theme variables (light default) */
 :root {
 	--bg: #ffffff;
+	--bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 	--text: #0f172a;
-	--muted: #475569;
-	--card: #ffffff;
-	--card-border: rgba(15,23,42,0.06);
+	--muted: #64748b;
+	--card: rgba(255, 255, 255, 0.7);
+	--card-solid: #ffffff;
+	--card-border: rgba(15,23,42,0.08);
 	--accent: #f97316; /* Oracle-style orange */
 	--accent-600: #ea580c;
-	--focus-ring: rgba(249,115,22,0.18);
-	--glass: rgba(15,23,42,0.04);
+	--accent-glow: rgba(249, 115, 22, 0.4);
+	--focus-ring: rgba(249,115,22,0.25);
+	--glass: rgba(255, 255, 255, 0.6);
+	--glass-border: rgba(255, 255, 255, 0.8);
 }
 
 /* Dark theme overrides */
 [data-theme="dark"] {
-	--bg: #0b1220;
-	--text: #e6eef8;
+	--bg: #040914;
+	--bg-gradient: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+	--text: #f8fafc;
 	--muted: #94a3b8;
-	--card: #071227;
-	--card-border: rgba(255,255,255,0.04);
+	--card: rgba(15, 23, 42, 0.6);
+	--card-solid: #0f172a;
+	--card-border: rgba(255,255,255,0.08);
 	--accent: #ff8a3d;
 	--accent-600: #ff7a1a;
-	--focus-ring: rgba(255,138,61,0.12);
-	--glass: rgba(255,255,255,0.02);
+	--accent-glow: rgba(255, 138, 61, 0.3);
+	--focus-ring: rgba(255,138,61,0.2);
+	--glass: rgba(15, 23, 42, 0.4);
+	--glass-border: rgba(255, 255, 255, 0.1);
 }
 
 html, body, #__next {
 	height: 100%;
+	scroll-behavior: smooth;
 }
 
 body {
-	background-color: var(--bg);
+	background: var(--bg-gradient);
+	background-attachment: fixed;
 	color: var(--text);
-	transition: background-color 180ms ease, color 180ms ease;
+}
+
+/* Smooth theme transition for all elements globally */
+*, *::before, *::after {
+    transition-property: background-color, border-color, color, fill, stroke, box-shadow, background;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+/* Utilities */
+.glass-panel {
+	background: var(--card);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid var(--card-border);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.glass-header {
+	background: color-mix(in srgb, var(--bg) 90%, transparent);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+	border-bottom: 1px solid var(--card-border);
 }
 
 /* Card helper */
 .card {
 	background: var(--card);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 	border: 1px solid var(--card-border);
 	color: var(--text);
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
 /* Accent utilities */
 .accent-bg { background-color: var(--accent); }
 .accent { color: var(--accent); }
 .accent-hover:hover { background-color: var(--accent-600); }
+.accent-glow { box-shadow: 0 0 20px var(--accent-glow); }
 
 /* Focus outline using accent */
 .focus-accent:focus {
@@ -55,4 +91,19 @@ body {
 }
 
 /* Smooth transitions for interactive elements */
-.ui-transition { transition: background-color 160ms ease, color 160ms ease, transform 120ms ease; }
+.ui-transition { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

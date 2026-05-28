@@ -1,1 +1,58 @@
 @import "tailwindcss";
+
+/* Theme variables (light default) */
+:root {
+	--bg: #ffffff;
+	--text: #0f172a;
+	--muted: #475569;
+	--card: #ffffff;
+	--card-border: rgba(15,23,42,0.06);
+	--accent: #f97316; /* Oracle-style orange */
+	--accent-600: #ea580c;
+	--focus-ring: rgba(249,115,22,0.18);
+	--glass: rgba(15,23,42,0.04);
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+	--bg: #0b1220;
+	--text: #e6eef8;
+	--muted: #94a3b8;
+	--card: #071227;
+	--card-border: rgba(255,255,255,0.04);
+	--accent: #ff8a3d;
+	--accent-600: #ff7a1a;
+	--focus-ring: rgba(255,138,61,0.12);
+	--glass: rgba(255,255,255,0.02);
+}
+
+html, body, #__next {
+	height: 100%;
+}
+
+body {
+	background-color: var(--bg);
+	color: var(--text);
+	transition: background-color 180ms ease, color 180ms ease;
+}
+
+/* Card helper */
+.card {
+	background: var(--card);
+	border: 1px solid var(--card-border);
+	color: var(--text);
+}
+
+/* Accent utilities */
+.accent-bg { background-color: var(--accent); }
+.accent { color: var(--accent); }
+.accent-hover:hover { background-color: var(--accent-600); }
+
+/* Focus outline using accent */
+.focus-accent:focus {
+	box-shadow: 0 0 0 4px var(--focus-ring);
+	outline: none;
+}
+
+/* Smooth transitions for interactive elements */
+.ui-transition { transition: background-color 160ms ease, color 160ms ease, transform 120ms ease; }

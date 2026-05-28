@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ThemeToggle from "../components/ThemeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,13 +24,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-50`}
-      >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}> 
+        <div className="w-full border-b" style={{ borderColor: 'var(--card-border)' }}>
+          <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+            <div className="flex items-center gap-3">
+                <img src="/logo.png" alt="Event logo" className="w-10 h-10 object-contain rounded-md" />
+                <div>
+                  <div className="text-sm font-semibold" style={{ color: 'var(--text)' }}>Accelalpha • Oracle</div>
+                  <div className="text-xs" style={{ color: 'var(--muted)' }}>Regional AI & Supply Chain Summit</div>
+                </div>
+              </div>
+            <div className="flex items-center gap-4">
+              <img src="/oracle.png" alt="Oracle" className="h-8 object-contain" />
+              <ThemeToggle />
+            </div>
+          </div>
+        </div>
         {children}
       </body>
     </html>

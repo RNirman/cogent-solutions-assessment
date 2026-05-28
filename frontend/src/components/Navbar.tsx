@@ -26,7 +26,7 @@ export default function Navbar() {
       <div className="w-full flex items-center justify-between px-4 sm:px-8 py-3">
         {/* Left Logo */}
         <div className="flex items-center gap-4">
-            <img src="/logo.png" alt="Event logo" className="w-auto h-16 sm:h-20 object-contain rounded-md" />
+            <img src="/logo_nbg.png" alt="Event logo" className="w-auto h-16 sm:h-20 object-contain rounded-md" />
             <div className="hidden xl:block">
               <div className="text-sm font-bold tracking-wide" style={{ color: isScrolled ? 'var(--text)' : '#ffffff' }}>Accelalpha • Oracle</div>
               <div className="text-xs font-medium" style={{ color: isScrolled ? 'var(--muted)' : 'rgba(255, 255, 255, 0.7)' }}>Regional AI & Supply Chain Summit</div>
@@ -47,7 +47,7 @@ export default function Navbar() {
             Register
           </a>
           <div className="h-10 w-px bg-[var(--card-border)] hidden md:block"></div>
-          <img src="/oracle.png" alt="Oracle" className="w-auto h-12 sm:h-16 object-contain hidden sm:block" />
+          <img src="/oracle_nbg.png" alt="Oracle" className="w-auto h-12 sm:h-16 object-contain hidden sm:block" />
         </div>
       </div>
     </header>

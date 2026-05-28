@@ -29,7 +29,7 @@ export default function Home() {
             <h4 className="text-sm font-semibold uppercase tracking-[0.18em] mb-6" style={{ color: 'var(--accent)' }}>Awards</h4>
             <div className="grid grid-cols-2 gap-3">
               {[ '/BPW-2024_2.png', '/bestwork-01.png', '/bestwork-03.png', '/bestwork-04.png' ].map((img) => (
-                <img key={img} src={img} alt="Award" className="w-full rounded-xl border object-cover bg-white" style={{ borderColor: 'var(--card-border)' }} />
+                <img key={img} src={img} alt="Award" className="w-full rounded-xl border object-cover bg-b" style={{ borderColor: 'var(--card-border)' }} />
               ))}
             </div>
           </section>
@@ -48,7 +48,7 @@ export default function Home() {
             <div className="space-y-2 text-sm leading-relaxed" style={{ color: 'var(--muted)' }}>
               <p>+971 4 576 1039</p>
               <p>+971 50 643 5244</p>
-              <a href="mailto:partnerships@cogentsolutions.ae" className="inline-block mt-2 font-medium hover:text-[var(--accent)] ui-transition" style={{ color: 'var(--text)' }}>
+              <a href="mailto:partnerships@cogentsolutions.ae" className="inline-block mt-2 font-medium hover:text-(--accent) ui-transition" style={{ color: 'var(--text)' }}>
                 partnerships@cogentsolutions.ae
               </a>
             </div>

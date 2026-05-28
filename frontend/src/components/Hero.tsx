@@ -90,13 +90,6 @@ export default function Hero() {
         
         {/* Dark Gradient Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-0"></div>
-        <div 
-          className="absolute inset-0 bg-[var(--bg)] z-0 h-full"
-          style={{ 
-            maskImage: 'linear-gradient(to top, black 0%, transparent 40%)', 
-            WebkitMaskImage: 'linear-gradient(to top, black 0%, transparent 40%)' 
-          }}
-        ></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">

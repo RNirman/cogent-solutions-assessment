@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Clock, Users, Mic, Coffee } from "lucide-react";
 
 import type { AgendaItem, SessionType } from "@/types/agenda";
+import Particles from "./Particles";
 
 interface AgendaProps {
   agendaItems: AgendaItem[];
@@ -24,8 +25,20 @@ export default function Agenda({ agendaItems }: AgendaProps) {
   };
 
   return (
-    <section className="py-24 relative" id="agenda">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-24 relative overflow-hidden" id="agenda">
+      <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
+        <Particles
+          particleColors={["#f97316", "#ea580c", "#ff8a3d"]}
+          particleCount={300}
+          particleSpread={10}
+          speed={0.05}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
           <p className="text-sm font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--accent)' }}>Schedule</p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Agenda</h2>

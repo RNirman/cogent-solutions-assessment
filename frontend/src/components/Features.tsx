@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Lightbulb, TrendingUp, ShieldCheck } from "lucide-react";
 import { useRef } from "react";
+import Particles from "./Particles";
 
 const features = [
   {
@@ -35,9 +36,21 @@ export default function Features() {
 
   return (
     <section ref={containerRef} className="py-24 relative overflow-hidden" id="reasons">
-      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-[var(--accent)] rounded-full mix-blend-multiply filter blur-[150px] opacity-10 pointer-events-none"></div>
+      <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
+        <Particles
+          particleColors={["#f97316", "#ea580c", "#ff8a3d"]}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.05}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
+      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-[var(--accent)] rounded-full mix-blend-multiply filter blur-[150px] opacity-10 pointer-events-none z-0"></div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <p className="text-sm font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'var(--accent)' }}>Top 3 Reasons to Attend</p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Why this event matters for Gulf supply chain leaders</h2>

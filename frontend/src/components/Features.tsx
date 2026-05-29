@@ -79,17 +79,6 @@ export default function Features() {
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-(--bg)/80 to-transparent mix-blend-overlay"></div>
                   </div>
-                  
-                  {/* Floating Icon Badge */}
-                  {/* <motion.div 
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", stiffness: 200, delay: 0.4 }}
-                    className="absolute -bottom-6 -right-6 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:-right-7.5 w-16 h-16 rounded-2xl glass-panel flex items-center justify-center shadow-xl border-2 border-(--accent) z-10 bg-(--bg)"
-                  >
-                    <feature.icon className="w-8 h-8 text-(--accent)" />
-                  </motion.div> */}
                 </motion.div>
 
                 {/* Text Column */}

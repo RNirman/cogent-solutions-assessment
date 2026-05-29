@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Overview() {
   return (
-    <section id="overview" className="py-24 relative overflow-hidden bg-[var(--card)] border-y border-[var(--card-border)]">
+    <section id="overview" className="py-24 relative overflow-hidden bg-(--card) border-y border-(--card-border)">
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}

@@ -10,7 +10,7 @@ export default function Home() {
   const agendaItems = parseAgenda();
 
   return (
-    <main className="min-h-screen">
+    <main id="top" className="min-h-screen">
       <Hero />
       <Overview />
       <Features />
@@ -62,7 +62,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
                     title="LinkedIn"
-                    className="inline-flex items-center justify-center rounded-full w-9 h-9 border ui-transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                    className="inline-flex items-center justify-center rounded-full w-9 h-9 border ui-transition hover:border-(--accent) hover:text-(--accent)"
                     style={{ borderColor: 'var(--card-border)', color: 'var(--muted)' }}
                   >
                     <svg
@@ -81,7 +81,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     aria-label="Facebook"
                     title="Facebook"
-                    className="inline-flex items-center justify-center rounded-full w-9 h-9 border ui-transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                    className="inline-flex items-center justify-center rounded-full w-9 h-9 border ui-transition hover:border-(--accent) hover:text-(--accent)"
                     style={{ borderColor: 'var(--card-border)', color: 'var(--muted)' }}
                   >
                     <svg
@@ -100,7 +100,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     aria-label="Instagram"
                     title="Instagram"
-                    className="inline-flex items-center justify-center rounded-full w-9 h-9 border ui-transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                    className="inline-flex items-center justify-center rounded-full w-9 h-9 border ui-transition hover:border-(--accent) hover:text-(--accent)"
                     style={{ borderColor: 'var(--card-border)', color: 'var(--muted)' }}
                   >
                     <svg
@@ -119,7 +119,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     aria-label="X"
                     title="X"
-                    className="inline-flex items-center justify-center rounded-full w-9 h-9 border ui-transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                    className="inline-flex items-center justify-center rounded-full w-9 h-9 border ui-transition hover:border-(--accent) hover:text-(--accent)"
                     style={{ borderColor: 'var(--card-border)', color: 'var(--muted)' }}
                   >
                     <svg

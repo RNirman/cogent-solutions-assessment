@@ -2,8 +2,23 @@ import fs from 'fs';
 import path from 'path';
 import { SessionType, Speaker, AgendaItem } from '../types/agenda';
 
+function resolveAgendaPath(): string {
+  const candidates = [
+    path.join(process.cwd(), 'agenda.txt'),
+    path.join(process.cwd(), '../backend/agenda.txt'),
+  ];
+
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) {
+      return candidate;
+    }
+  }
+
+  throw new Error('agenda.txt not found. Expected frontend/agenda.txt or backend/agenda.txt.');
+}
+
 export function parseAgenda(): AgendaItem[] {
-  const agendaPath = path.join(process.cwd(), '../backend/agenda.txt');
+  const agendaPath = resolveAgendaPath();
   const fileContent = fs.readFileSync(agendaPath, 'utf8');
 
   const items: AgendaItem[] = [];

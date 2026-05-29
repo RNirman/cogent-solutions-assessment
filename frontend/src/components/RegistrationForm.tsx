@@ -130,7 +130,7 @@ export default function RegistrationForm() {
 
   return (
     <section className="py-24 relative overflow-hidden" id="register">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(249,115,22,0.05)]"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-transparent to-[rgba(249,115,22,0.05)]"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-start">
         
@@ -152,7 +152,7 @@ export default function RegistrationForm() {
               <label htmlFor="name" className="text-sm font-semibold ml-1">Full Name</label>
               <input 
                 type="text" id="name" required
-                className="w-full rounded-xl px-4 py-3 bg-[var(--bg)] border border-[var(--card-border)] focus-accent ui-transition"
+                className="w-full rounded-xl px-4 py-3 bg-(--bg) border border-(--card-border) focus-accent ui-transition"
                 placeholder="John Doe"
                 value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})}
                 disabled={loading}
@@ -166,7 +166,7 @@ export default function RegistrationForm() {
               <label htmlFor="email" className="text-sm font-semibold ml-1">Business Email</label>
               <input 
                 type="email" id="email" required
-                className="w-full rounded-xl px-4 py-3 bg-[var(--bg)] border border-[var(--card-border)] focus-accent ui-transition"
+                className="w-full rounded-xl px-4 py-3 bg-(--bg) border border-(--card-border) focus-accent ui-transition"
                 placeholder="john@company.com"
                 value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}
                 disabled={loading}
@@ -180,7 +180,7 @@ export default function RegistrationForm() {
               <label htmlFor="focus" className="text-sm font-semibold ml-1">Professional Priorities / Challenges</label>
               <textarea 
                 id="focus" required rows={4}
-                className="w-full rounded-xl px-4 py-3 bg-[var(--bg)] border border-[var(--card-border)] focus-accent ui-transition resize-none"
+                className="w-full rounded-xl px-4 py-3 bg-(--bg) border border-(--card-border) focus-accent ui-transition resize-none"
                 placeholder="e.g., We are improving warehouse automation and supply chain resilience..."
                 value={formData.focus} onChange={(e) => setFormData({...formData, focus: e.target.value})}
                 disabled={loading}
@@ -195,7 +195,7 @@ export default function RegistrationForm() {
               type="submit" 
               disabled={loading}
               aria-busy={loading}
-              className="w-full flex items-center justify-center gap-2 text-white font-bold py-4 px-6 rounded-xl ui-transition disabled:opacity-70 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-600)] hover:shadow-lg hover:shadow-[var(--accent-glow)] transform hover:-translate-y-0.5 disabled:hover:translate-y-0"
+              className="w-full flex items-center justify-center gap-2 text-white font-bold py-4 px-6 rounded-xl ui-transition disabled:opacity-70 bg-linear-to-r from-(--accent) to-(--accent-600) hover:shadow-lg transform hover:-translate-y-0.5 disabled:hover:translate-y-0"
             >
               {loading ? (
                 <>
@@ -234,7 +234,7 @@ export default function RegistrationForm() {
         >
           <div className="h-full glass-panel p-8 md:p-10 rounded-3xl flex flex-col">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <CheckCircle2 className="text-[var(--accent)] w-6 h-6" />
+              <CheckCircle2 className="text-(--accent) w-6 h-6" />
               Your Recommended Session
             </h2>
 
@@ -243,23 +243,23 @@ export default function RegistrationForm() {
             </div>
 
             {loading ? (
-              <div className="flex-1 rounded-2xl border border-[var(--card-border)] bg-[var(--bg)] p-6 min-h-[300px]">
+              <div className="flex-1 rounded-2xl border border-(--card-border) bg-(--bg) p-6 min-h-75">
                 <div className="flex items-center gap-3 mb-6">
-                  <Loader2 className="w-5 h-5 animate-spin text-[var(--accent)]" />
+                  <Loader2 className="w-5 h-5 animate-spin text-(--accent)" />
                   <p className="font-medium">{loadingStep || 'Generating your personalized invitation...'}</p>
                 </div>
                 <div className="space-y-3 animate-pulse">
-                  <div className="h-4 rounded bg-[var(--card-border)]/60 w-11/12"></div>
-                  <div className="h-4 rounded bg-[var(--card-border)]/60 w-10/12"></div>
-                  <div className="h-4 rounded bg-[var(--card-border)]/60 w-9/12"></div>
-                  <div className="h-4 rounded bg-[var(--card-border)]/60 w-8/12"></div>
+                  <div className="h-4 rounded bg-(--card-border)/60 w-11/12"></div>
+                  <div className="h-4 rounded bg-(--card-border)/60 w-10/12"></div>
+                  <div className="h-4 rounded bg-(--card-border)/60 w-9/12"></div>
+                  <div className="h-4 rounded bg-(--card-border)/60 w-8/12"></div>
                 </div>
               </div>
             ) : result ? (
               <div className="space-y-4 flex-1">
                 {apiResult?.matched_session && (
-                  <div className="rounded-2xl p-4 border border-[var(--card-border)] bg-[var(--card)]">
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] mb-2 text-[var(--accent)]">Matched Session</p>
+                  <div className="rounded-2xl p-4 border border-(--card-border) bg-(--card)">
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] mb-2 text-(--accent)">Matched Session</p>
                     <h3 className="font-bold text-lg">{apiResult.matched_session.title}</h3>
                     <p className="text-sm mt-1" style={{ color: 'var(--muted)' }}>{apiResult.matched_session.time}</p>
                     <p className="text-sm" style={{ color: 'var(--muted)' }}>Speaker: {apiResult.matched_session.speaker}</p>
@@ -268,7 +268,7 @@ export default function RegistrationForm() {
                 )}
 
                 {apiResult && (
-                  <div className="rounded-xl p-3 border border-[var(--card-border)] flex items-center gap-2 text-sm">
+                  <div className="rounded-xl p-3 border border-(--card-border) flex items-center gap-2 text-sm">
                     {apiResult.llm_output_validated ? (
                       <>
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
@@ -283,14 +283,14 @@ export default function RegistrationForm() {
                   </div>
                 )}
 
-                <div className="flex-1 bg-[var(--bg)] rounded-2xl p-6 border border-[var(--card-border)] overflow-y-auto max-h-[500px]">
+                <div className="flex-1 bg-(--bg) rounded-2xl p-6 border border-(--card-border) overflow-y-auto max-h-125">
                   <p className="whitespace-pre-wrap leading-relaxed text-sm md:text-base">{result}</p>
                 </div>
 
                 <button
                   type="button"
                   onClick={handleCopy}
-                  className="w-full flex items-center justify-center gap-2 rounded-xl border border-[var(--card-border)] px-4 py-3 font-semibold hover:border-[var(--accent)] ui-transition"
+                  className="w-full flex items-center justify-center gap-2 rounded-xl border border-(--card-border) px-4 py-3 font-semibold hover:border-(--accent) ui-transition"
                 >
                   {copied ? (
                     <>
@@ -306,11 +306,11 @@ export default function RegistrationForm() {
                 </button>
               </div>
             ) : (
-              <div className="flex-1 border-2 border-dashed border-[var(--card-border)] rounded-2xl flex flex-col items-center justify-center p-8 text-center min-h-[300px]">
-                <div className="w-16 h-16 rounded-full bg-[var(--glass)] flex items-center justify-center mb-4">
-                  <Send className="w-6 h-6 text-[var(--muted)]" />
+              <div className="flex-1 border-2 border-dashed border-(--card-border) rounded-2xl flex flex-col items-center justify-center p-8 text-center min-h-75">
+                <div className="w-16 h-16 rounded-full bg-(--glass) flex items-center justify-center mb-4">
+                  <Send className="w-6 h-6 text-(--muted)" />
                 </div>
-                <p className="text-[var(--muted)] max-w-sm">
+                <p className="text-(--muted) max-w-sm">
                   Submit your details to receive a recommended session and a personalized invitation draft.
                 </p>
               </div>

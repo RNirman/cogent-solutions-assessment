@@ -8,14 +8,15 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr, Field, field_validator
 from dotenv import load_dotenv
-import google.generativeai as genai
+from google import genai
 
 load_dotenv()
 
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("GEMINI_API_KEY is missing. Check your .env file.")
-genai.configure(api_key=api_key)
+
+gemini_client = genai.Client(api_key=api_key)
 
 default_origins = "http://localhost:3000,http://127.0.0.1:3000"
 allowed_origins_raw = os.getenv("ALLOWED_ORIGINS", default_origins)
@@ -193,8 +194,6 @@ async def process_visitor(visitor: VisitorInput):
     logger.info("request_received request_id=%s email=%s", request_id, visitor.email)
 
     try:
-        # Read the local agenda file
-        # Make sure agenda.txt is in the same directory as this file
         with open("agenda.txt", "r", encoding="utf-8") as file:
             agenda_content = file.read()
         sessions = parse_agenda_sessions(agenda_content)
@@ -252,9 +251,11 @@ async def process_visitor(visitor: VisitorInput):
     """
 
     try:
-        model = genai.GenerativeModel('gemini-2.5-flash')
-        response = model.generate_content(prompt)
-        raw_output = response.text.strip() if response.text else ""
+        response = gemini_client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+        )
+        raw_output = (response.text or "").strip()
         used_fallback = False
 
         try:

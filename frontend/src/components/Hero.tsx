@@ -13,7 +13,7 @@ const WordReveal = ({ text, delayOffset = 0, className = "" }: { text: string, d
   return (
     <span className="inline-block">
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden mr-[0.25em] pb-[0em] -mb-[0.5em] pt-[0.2em] -mt-[0.2em]">
+        <span key={i} className="inline-block overflow-hidden mr-[0.25em] pb-0 mb-[-0.5em] pt-[0.2em] mt-[-0.2em]">
           <motion.span
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -41,7 +41,6 @@ export default function Hero() {
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   useEffect(() => {
-    // Countdown Timer
     const targetDate = new Date("2024-11-13T09:30:00").getTime();
     const updateTimer = () => {
       const now = new Date().getTime();
@@ -58,7 +57,6 @@ export default function Hero() {
     const timerInterval = setInterval(updateTimer, 1000);
     updateTimer();
 
-    // Background Slider
     const bgInterval = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % backgrounds.length);
     }, 5000);
@@ -72,7 +70,6 @@ export default function Hero() {
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center pt-32 overflow-hidden">
       
-      {/* Animated Background Slider */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black">
         <AnimatePresence mode="popLayout">
           <motion.img
@@ -87,9 +84,8 @@ export default function Hero() {
             className="absolute inset-0 w-full h-[120%] object-cover object-center"
           />
         </AnimatePresence>
-        
-        {/* Dark Gradient Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-0"></div>
+
+        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/50 to-transparent z-0"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -109,7 +105,7 @@ export default function Hero() {
               <WordReveal 
                 text="Sailing with AI in Supply Chain" 
                 delayOffset={0.4} 
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-600)]" 
+                className="text-transparent bg-clip-text bg-linear-to-r from-(--accent) to-(--accent-600)" 
               />
             </h1>
             
@@ -123,7 +119,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20">
-                <Calendar className="w-5 h-5 text-[var(--accent)]" />
+                <Calendar className="w-5 h-5 text-(--accent)" />
               </div>
               <div>
                 <p className="text-sm font-bold text-white">13th Nov 2024</p>
@@ -132,7 +128,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20">
-                <Clock className="w-5 h-5 text-[var(--accent)]" />
+                <Clock className="w-5 h-5 text-(--accent)" />
               </div>
               <div>
                 <p className="text-sm font-bold text-white">09:30 AM - 01:00 PM</p>
@@ -141,7 +137,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20">
-                <MapPin className="w-5 h-5 text-[var(--accent)]" />
+                <MapPin className="w-5 h-5 text-(--accent)" />
               </div>
               <div>
                 <p className="text-sm font-bold text-white">Marriott Resort, The Palm</p>
@@ -151,7 +147,7 @@ export default function Hero() {
           </div>
 
           <div className="flex items-center gap-4 pt-4">
-            <a href="#register" className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-bold text-white shadow-xl hover:shadow-[0_0_20px_var(--accent-glow)] hover:scale-[1.02] ui-transition bg-gradient-to-r from-[var(--accent)] to-[var(--accent-600)] border border-[var(--accent)]/50">
+            <a href="#register" className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-bold text-white shadow-xl hover:shadow-[0_0_20px_var(--accent-glow)] hover:scale-[1.02] ui-transition bg-linear-to-r from-(--accent) to-(--accent-600) border border-(--accent)/50">
               Request Your Invitation
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -163,7 +159,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="relative lg:h-[600px] flex items-center justify-center lg:justify-end"
+          className="relative lg:h-150 flex items-center justify-center lg:justify-end"
         >
            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl w-full max-w-md text-center space-y-6 shadow-2xl">
               <h3 className="text-2xl font-bold text-white">Countdown to Event</h3>

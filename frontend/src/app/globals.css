@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Theme variables (light default) */
 :root {
 	--bg: #ffffff;
 	--bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -17,7 +16,6 @@
 	--glass-border: rgba(255, 255, 255, 0.8);
 }
 
-/* Dark theme overrides */
 [data-theme="dark"] {
 	--bg: #040914;
 	--bg-gradient: linear-gradient(135deg, #0f172a 0%, #020617 100%);
@@ -45,14 +43,12 @@ body {
 	color: var(--text);
 }
 
-/* Smooth theme transition for all elements globally */
 *, *::before, *::after {
     transition-property: background-color, border-color, color, fill, stroke, box-shadow, background;
     transition-duration: 500ms;
     transition-timing-function: ease-in-out;
 }
 
-/* Utilities */
 .glass-panel {
 	background: var(--card);
 	backdrop-filter: blur(12px);
@@ -68,7 +64,6 @@ body {
 	border-bottom: 1px solid var(--card-border);
 }
 
-/* Card helper */
 .card {
 	background: var(--card);
 	backdrop-filter: blur(12px);
@@ -78,22 +73,18 @@ body {
 	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
-/* Accent utilities */
 .accent-bg { background-color: var(--accent); }
 .accent { color: var(--accent); }
 .accent-hover:hover { background-color: var(--accent-600); }
 .accent-glow { box-shadow: 0 0 20px var(--accent-glow); }
 
-/* Focus outline using accent */
 .focus-accent:focus {
 	box-shadow: 0 0 0 4px var(--focus-ring);
 	outline: none;
 }
 
-/* Smooth transitions for interactive elements */
 .ui-transition { transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

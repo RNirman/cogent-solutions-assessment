@@ -9,9 +9,9 @@
 	--card: rgba(255, 255, 255, 0.7);
 	--card-solid: #ffffff;
 	--card-border: rgba(15,23,42,0.08);
-	--accent: #f97316; /* Oracle-style orange */
-	--accent-600: #ea580c;
-	--accent-glow: rgba(249, 115, 22, 0.4);
+	--accent: #C74634;
+	--accent-600: #B33C2C;
+	--accent-glow: rgba(199, 70, 52, 0.35);
 	--focus-ring: rgba(249,115,22,0.25);
 	--glass: rgba(255, 255, 255, 0.6);
 	--glass-border: rgba(255, 255, 255, 0.8);
@@ -26,10 +26,10 @@
 	--card: rgba(15, 23, 42, 0.6);
 	--card-solid: #0f172a;
 	--card-border: rgba(255,255,255,0.08);
-	--accent: #ff8a3d;
-	--accent-600: #ff7a1a;
-	--accent-glow: rgba(255, 138, 61, 0.3);
-	--focus-ring: rgba(255,138,61,0.2);
+	--accent: #C74634;
+	--accent-600: #B33C2C;
+	--accent-glow: rgba(199, 70, 52, 0.35);
+	--focus-ring: rgba(199, 70, 52, 0.25);
 	--glass: rgba(15, 23, 42, 0.4);
 	--glass-border: rgba(255, 255, 255, 0.1);
 }

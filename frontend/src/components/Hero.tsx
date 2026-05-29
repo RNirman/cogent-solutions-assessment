@@ -70,7 +70,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-center pt-32 overflow-hidden" id="overview">
+    <section ref={containerRef} className="relative min-h-screen flex items-center pt-32 overflow-hidden">
       
       {/* Animated Background Slider */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black">
@@ -96,7 +96,7 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-8"
         >
 
@@ -109,7 +109,7 @@ export default function Hero() {
               <WordReveal 
                 text="Sailing with AI in Supply Chain" 
                 delayOffset={0.4} 
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[#ffb07a]" 
+                className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-600)]" 
               />
             </h1>
             
@@ -162,7 +162,7 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="relative lg:h-[600px] flex items-center justify-center lg:justify-end"
         >
            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl w-full max-w-md text-center space-y-6 shadow-2xl">

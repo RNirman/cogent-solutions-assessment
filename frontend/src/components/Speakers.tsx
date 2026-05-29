@@ -7,9 +7,9 @@ const speakers = [
   { name: 'Tamer Hamed', title: 'CIO', company: 'Dubai Cable Company', image: '/tamerhamed.png' },
   { name: 'Richard Buxton', title: 'VP EMEA', company: 'Accelalpha', image: '/richardbuxton.png' },
   { name: 'Joe Spear', title: 'Partner', company: 'Accelalpha', image: '/joespear.png' },
-  { name: 'Srivatsav Sarvepalli', title: 'Regional Director', company: 'Oracle', image: '/srivatsavsarvepalli.png' },
-  { name: 'Rohan Chitnis', title: 'Sales Director', company: 'Oracle', image: '/rohanchitnis.png' },
-  { name: 'Ujjwal Kumar', title: 'Principal Domain Lead', company: 'Oracle', image: '/ujjwalkumar.png' },
+  { name: 'Srivatsav Sarvepalli', title: 'Regional Director Supply Chain Solutions, ECEMEA', company: 'Oracle', image: '/srivatsavsarvepalli.png' },
+  { name: 'Rohan Chitnis', title: 'Sales Director Applications', company: 'Oracle', image: '/rohanchitnis.png' },
+  { name: 'Ujjwal Kumar', title: 'Principal Domain Lead, ECEMEA', company: 'Oracle', image: '/ujjwalkumar.png' },
 ];
 
 export default function Speakers() {
@@ -55,8 +55,8 @@ export default function Speakers() {
               </div>
               
               <div className="relative w-full flex flex-col items-center">
-                <h3 className="text-xl font-bold mb-1 group-hover:text-[var(--accent)] ui-transition">{speaker.name}</h3>
-                <p className="text-sm font-medium text-[var(--accent)]">{speaker.title}</p>
+                <h3 className="text-xl font-bold mb-1 group-hover:text-(--accent) ui-transition">{speaker.name}</h3>
+                <p className="text-sm font-medium text-(--accent)">{speaker.title}</p>
                 
                 <div className="absolute top-full left-0 w-full text-center mt-2 overflow-hidden transition-all duration-300 opacity-0 -translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 pointer-events-none">
                   <p className="text-sm px-4" style={{ color: 'var(--muted)' }}>{speaker.company}</p>

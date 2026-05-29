@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Overview from "@/components/Overview";
 import Features from "@/components/Features";
 import Speakers from "@/components/Speakers";
 import Agenda from "@/components/Agenda";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
+      <Overview />
       <Features />
       <Speakers />
       <Agenda agendaItems={agendaItems} />

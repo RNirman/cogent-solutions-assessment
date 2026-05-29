@@ -38,7 +38,7 @@ export default function Features() {
     <section ref={containerRef} className="py-24 relative overflow-hidden" id="reasons">
       <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
         <Particles
-          particleColors={["#f97316", "#ea580c", "#ff8a3d"]}
+          particleColors={["#C74634", "#B33C2C", "#D45B4A"]}
           particleCount={200}
           particleSpread={10}
           speed={0.05}
@@ -48,7 +48,7 @@ export default function Features() {
           disableRotation={false}
         />
       </div>
-      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-[var(--accent)] rounded-full mix-blend-multiply filter blur-[150px] opacity-10 pointer-events-none z-0"></div>
+      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-(--accent) rounded-full mix-blend-multiply filter blur-[150px] opacity-10 pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
@@ -75,21 +75,21 @@ export default function Features() {
                       src={feature.image} 
                       alt={feature.title}
                       style={{ y: yParallax, scale: 1.1 }}
-                      className="w-full h-[400px] object-cover"
+                      className="w-full h-100 object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/80 to-transparent mix-blend-overlay"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-(--bg)/80 to-transparent mix-blend-overlay"></div>
                   </div>
                   
                   {/* Floating Icon Badge */}
-                  <motion.div 
+                  {/* <motion.div 
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 200, delay: 0.4 }}
-                    className="absolute -bottom-6 -right-6 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:right-[-30px] w-16 h-16 rounded-2xl glass-panel flex items-center justify-center shadow-xl border-2 border-[var(--accent)] z-10 bg-[var(--bg)]"
+                    className="absolute -bottom-6 -right-6 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:-right-7.5 w-16 h-16 rounded-2xl glass-panel flex items-center justify-center shadow-xl border-2 border-(--accent) z-10 bg-(--bg)"
                   >
-                    <feature.icon className="w-8 h-8 text-[var(--accent)]" />
-                  </motion.div>
+                    <feature.icon className="w-8 h-8 text-(--accent)" />
+                  </motion.div> */}
                 </motion.div>
 
                 {/* Text Column */}
@@ -100,8 +100,8 @@ export default function Features() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="w-full lg:w-1/2 space-y-6"
                 >
-                  <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[var(--card-border)] bg-[var(--card)]">
-                    <span className="text-xl font-bold text-[var(--accent)]">0{idx + 1}</span>
+                  <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-(--card-border) bg-(--card)">
+                    <span className="text-xl font-bold text-(--accent)">0{idx + 1}</span>
                   </div>
                   <h3 className="text-3xl md:text-4xl font-bold leading-tight">{feature.title}</h3>
                   <p className="text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>{feature.text}</p>
@@ -111,6 +111,19 @@ export default function Features() {
             );
           })}
         </div>
+
+        {/* Concluding Statement */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-32 max-w-4xl mx-auto text-center relative z-10 px-4"
+        >
+          <p className="text-2xl md:text-4xl font-extrabold leading-relaxed text-transparent bg-clip-text bg-gradient-to-b from-[var(--text)] to-[var(--muted)] drop-shadow-sm">
+            This is your opportunity to rethink your supply chain strategy, stay ahead of disruption, and lead with sustainable, data-driven solutions tailored to the region’s needs.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

@@ -272,12 +272,12 @@ export default function RegistrationForm() {
                     {apiResult.llm_output_validated ? (
                       <>
                         <CheckCircle2 className="w-4 h-4 text-green-500" />
-                        <span style={{ color: 'var(--muted)' }}>Validated invitation draft generated from strict JSON output.</span>
+                        <span style={{ color: 'var(--muted)' }}>Your invitation draft is based on verified session details from the official agenda.</span>
                       </>
                     ) : (
                       <>
                         <ShieldAlert className="w-4 h-4 text-amber-500" />
-                        <span style={{ color: 'var(--muted)' }}>Safe fallback invitation draft used due to invalid LLM format.</span>
+                        <span style={{ color: 'var(--muted)' }}>Your invitation draft was prepared from your matched session using the official agenda.</span>
                       </>
                     )}
                   </div>

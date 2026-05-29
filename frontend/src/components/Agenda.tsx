@@ -28,7 +28,7 @@ export default function Agenda({ agendaItems }: AgendaProps) {
     <section className="py-24 relative overflow-hidden" id="agenda">
       <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
         <Particles
-          particleColors={["#f97316", "#ea580c", "#ff8a3d"]}
+          particleColors={["#C74634", "#B33C2C", "#D45B4A"]}
           particleCount={300}
           particleSpread={10}
           speed={0.05}

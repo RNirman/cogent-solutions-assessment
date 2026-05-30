@@ -8,6 +8,8 @@
 
 A modern, highly interactive Single Page Application (SPA) built for corporate event registration. This project serves as a full-stack assessment submission, combining a premium, animated frontend with an intelligent, deterministic AI-powered backend for dynamic session routing and automated B2B invitation drafting.
 
+Live demo - https://cogent-solutions-assessment.vercel.app/
+
 ---
 
 ## ✨ Key Features

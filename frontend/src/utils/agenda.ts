@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { SessionType, Speaker, AgendaItem } from '../types/agenda';
+import { SessionType, Speaker, AgendaItem, AgendaData } from '../types/agenda';
 
 function resolveAgendaPath(): string {
   const candidates = [
@@ -17,9 +17,12 @@ function resolveAgendaPath(): string {
   throw new Error('agenda.txt not found. Expected frontend/agenda.txt or backend/agenda.txt.');
 }
 
-export function parseAgenda(): AgendaItem[] {
+export function parseAgenda(): AgendaData {
   const agendaPath = resolveAgendaPath();
   const fileContent = fs.readFileSync(agendaPath, 'utf8');
+
+  const yearMatch = fileContent.match(/ACCELALPHA-ORACLE-(\d+)/);
+  const year = yearMatch ? parseInt(yearMatch[1], 10) : new Date().getFullYear();
 
   const items: AgendaItem[] = [];
   const blocks = fileContent.split(/\[SESSION_\d+\]/).slice(1);
@@ -77,5 +80,5 @@ export function parseAgenda(): AgendaItem[] {
     }
   }
 
-  return items;
+  return { year, items };
 }

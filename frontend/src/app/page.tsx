@@ -6,12 +6,14 @@ import Agenda from "@/components/Agenda";
 import RegistrationForm from "@/components/RegistrationForm";
 import { parseAgenda } from "@/utils/agenda";
 
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
-  const agendaItems = parseAgenda();
+  const { year, items: agendaItems } = parseAgenda();
 
   return (
     <main id="top" className="min-h-screen">
-      <Hero />
+      <Hero year={year} />
       <Overview />
       <Features />
       <Speakers />

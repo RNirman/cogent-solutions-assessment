@@ -28,7 +28,7 @@ const WordReveal = ({ text, delayOffset = 0, className = "" }: { text: string, d
   );
 };
 
-export default function Hero() {
+export default function Hero({ year = 2024 }: { year?: number }) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [currentBg, setCurrentBg] = useState(0);
   const containerRef = useRef<HTMLElement>(null);
@@ -41,7 +41,7 @@ export default function Hero() {
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   useEffect(() => {
-    const targetDate = new Date("2024-11-13T09:30:00").getTime();
+    const targetDate = new Date(`${year}-11-13T09:30:00`).getTime();
     const updateTimer = () => {
       const now = new Date().getTime();
       const difference = targetDate - now;
@@ -65,7 +65,7 @@ export default function Hero() {
       clearInterval(timerInterval);
       clearInterval(bgInterval);
     };
-  }, []);
+  }, [year]);
 
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center pt-32 overflow-hidden">
@@ -122,7 +122,7 @@ export default function Hero() {
                 <Calendar className="w-5 h-5 text-(--accent)" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">13th Nov 2024</p>
+                <p className="text-sm font-bold text-white">13th Nov {year}</p>
                 <p className="text-xs text-gray-400">Date</p>
               </div>
             </div>

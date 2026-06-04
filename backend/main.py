@@ -172,13 +172,25 @@ def _extract_json_object(text: str) -> dict:
         return json.loads(match.group(0))
 
 
-def _build_fallback_email(visitor_name: str, matched_session: AgendaSession) -> str:
+def _extract_event_name(agenda_content: str) -> str:
+    """
+    Extracts the event name/title from agenda.txt.
+    Uses the first non-empty line, or falls back to a generic name.
+    """
+    for line in agenda_content.splitlines():
+        stripped = line.strip()
+        if stripped:
+            return stripped
+    return "ACCELALPHA-ORACLE summit"
+
+
+def _build_fallback_email(visitor_name: str, matched_session: AgendaSession, event_name: str) -> str:
     """
     Safe fallback invitation if model output is malformed.
     """
     return (
         f"Dear {visitor_name},\n\n"
-        f"Thank you for your interest in the ACCELALPHA-ORACLE-2024 summit. "
+        f"Thank you for your interest in the {event_name}. "
         f"Based on your professional focus, we recommend attending "
         f"\"{matched_session.title}\" at {matched_session.time}, presented by {matched_session.speaker}. "
         f"This session is aligned with your stated priorities and offers practical, relevant insights.\n\n"
@@ -198,6 +210,7 @@ async def process_visitor(visitor: VisitorInput):
             agenda_content = file.read()
         sessions = parse_agenda_sessions(agenda_content)
         matched_session = match_best_session(visitor.focus, sessions)
+        event_name = _extract_event_name(agenda_content)
         logger.info(
             "session_matched request_id=%s session_id=%s title=%s time=%s",
             request_id,
@@ -211,7 +224,7 @@ async def process_visitor(visitor: VisitorInput):
         raise HTTPException(status_code=500, detail="agenda.txt file not found on server.")
 
     prompt = f"""
-    You are an intelligent event routing assistant for the 'ACCELALPHA-ORACLE-2024' summit.
+    You are an intelligent event routing assistant for the '{event_name}' summit.
     
     Here is the official event agenda:
     ---
@@ -271,7 +284,7 @@ async def process_visitor(visitor: VisitorInput):
             if response_session_title != matched_session.title:
                 raise ValueError("session_title does not match enforced session")
         except (KeyError, ValueError, json.JSONDecodeError, TypeError):
-            drafted_email = _build_fallback_email(visitor.name, matched_session)
+            drafted_email = _build_fallback_email(visitor.name, matched_session, event_name)
             used_fallback = True
             logger.warning("llm_validation_failed request_id=%s fallback_used=true", request_id)
         else:

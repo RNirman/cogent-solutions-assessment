@@ -11,3 +11,8 @@ export interface AgendaItem {
   type: SessionType;
   speakers: Speaker[];
 }
+
+export interface AgendaData {
+  year: number;
+  items: AgendaItem[];
+}
